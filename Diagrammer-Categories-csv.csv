@@ -1,0 +1,16 @@
+Name,Old - Column = type,New - wp_bsk_pdf_manager_cats - Column = id
+Bus 2leder,1,1
+Bus video,2,10
+Gamle diagrammer,3,21
+Vejledninger,4,23
+Adgangskontrol,5,24
+Andre mærker,6,25
+
+Specielle diagrammer,,22
+Analog telefoner,7,26
+Timer,8,27
+Fastnet telefon udstyr,9,28
+Digitalt tilbehør,15,29
+Analog tilbehør,16,30
+Telefon billeder,17,31
+Erstatningstelefonen,27,32
