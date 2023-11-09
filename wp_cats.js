@@ -5,7 +5,6 @@ const diagrammerKeywords = require("./diagrammer_keywords.js");
 async function cats() {
     const keywordsSet = await diagrammerKeywords();
     const keywordsArray = [...keywordsSet];
-    const idTypeTitleCats = {};
 
     try {
         for (let index = 0; index < keywordsArray.length; index++) {
@@ -15,8 +14,6 @@ async function cats() {
             let [type, title] = ifDataExists
                 ? ["CAT", ifDataExists.name]
                 : ["TAG", keyword];
-
-            idTypeTitleCats[keyword] = index + 1
 
             await pool.query(
                 `INSERT INTO cats(id, type, parent, title, description, password, empty_message, last_date)
@@ -28,8 +25,6 @@ async function cats() {
     } catch (err) {
         console.log(err);
     }
-
-    return idTypeTitleCats;
 }
 
 module.exports = cats;

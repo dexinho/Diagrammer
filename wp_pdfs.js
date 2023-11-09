@@ -21,7 +21,7 @@ const pdfs = async () => {
             let size = Math.floor(Math.random() * 900001 + 100000);
             let download_count = Math.floor(Math.random() * 33 + 1);
             let dayName = new Date().toLocaleDateString("en-US", {
-                weekday: "short",
+                weekday: "long",
             });
 
             await pool.query(

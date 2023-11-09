@@ -1,12 +1,14 @@
 const pool = require("./mysql_pool.js");
 const pdfs = require("./wp_pdfs.js");
 const cats = require("./wp_cats.js");
-const pdf_manager_relationships = require("./wp_pdf_manager_relationships.js");
+const pdfCatRelationships = require("./pdf_cat_relationships.js");
+const createTables = require('./create_tables.js')
 
 async function fixDiagrammer() {
+    await createTables();
     await pdfs();
     await cats();
-    await pdf_manager_relationships();
+    await pdfCatRelationships();
 
     pool.end();
 }

@@ -4,11 +4,11 @@ const diagrammerKeywords = require("./diagrammer_keywords.js");
 const makeIDTypePairs = require("./ID_type_pairs.js");
 const csvData = require("./csv_data.js");
 
-async function wp_pdf_manager_relationships() {
+async function pdfCatRelationships() {
     const diagrammerArr = await diagramerTable();
     const keywordsSet = await diagrammerKeywords();
     const keywordsArray = [...keywordsSet];
-    const idTypeTitleCats = await makeIDTypePairs()
+    const idTypeTitleCats = await makeIDTypePairs();
     let synteticId = 1;
 
     try {
@@ -18,20 +18,18 @@ async function wp_pdf_manager_relationships() {
             for (let j = 0; j < splitKeywords.length; j++) {
                 let keyword = splitKeywords[j].trim();
 
-                if (keywordsArray.includes(keyword)) {
-                    let id = synteticId++;
-                    let pdf_id = i + 1;
-                    let cat_id = idTypeTitleCats[keyword];
-                    let type = csvData.find((el) => el.newID == cat_id)
-                        ? "CAT"
-                        : "TAG";
+                let id = synteticId++;
+                let pdf_id = i + 1;
+                let cat_id = idTypeTitleCats[keyword];
+                let type = csvData.find((el) => el.newID == cat_id)
+                    ? "CAT"
+                    : "TAG";
 
-                    await pool.query(
-                        `INSERT INTO pdf_manager_relationships(id, type, pdf_id, cat_id)
+                await pool.query(
+                    `INSERT INTO pdf_cat_relationships(id, type, pdf_id, cat_id)
                 VALUES(?, ?, ?, ?)`,
-                        [id, type, pdf_id, cat_id]
-                    );
-                }
+                    [id, type, pdf_id, cat_id]
+                );
             }
         }
         console.log("Relationships inserted!");
@@ -40,4 +38,4 @@ async function wp_pdf_manager_relationships() {
     }
 }
 
-module.exports = wp_pdf_manager_relationships;
+module.exports = pdfCatRelationships;
