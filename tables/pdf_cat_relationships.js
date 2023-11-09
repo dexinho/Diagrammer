@@ -1,8 +1,8 @@
-const pool = require("./mysql_pool.js");
-const diagramerTable = require("./diagrammer_table.js");
-const diagrammerKeywords = require("./diagrammer_keywords.js");
-const makeIDTypePairs = require("./ID_type_pairs.js");
-const csvData = require("./csv_data.js");
+const pool = require("../mysql_pool.js");
+const diagramerTable = require("../diagrammer/diagrammer_table.js");
+const diagrammerKeywords = require("../diagrammer/diagrammer_keywords.js");
+const makeIDTypePairs = require("../ID_type_pairs.js");
+const csvData = require("../csv_data.js");
 
 async function pdfCatRelationships() {
     const diagrammerArr = await diagramerTable();
