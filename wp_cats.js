@@ -16,7 +16,7 @@ async function cats() {
                 ? ["CAT", ifDataExists.name]
                 : ["TAG", keyword];
 
-            idTypeTitleCats[title] = index + 1
+            idTypeTitleCats[keyword] = index + 1
 
             await pool.query(
                 `INSERT INTO cats(id, type, parent, title, description, password, empty_message, last_date)
