@@ -1,4 +1,4 @@
-const pool = require('../mysql_pool.js')
+const pool = require('../tools/mysql_pool.js')
 
 diagrammer_keywords = async () => {
     const keywordSet = new Set();

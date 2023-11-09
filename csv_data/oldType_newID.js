@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const csvData = fs.readFileSync("./Diagrammer-Categories-csv.csv", "utf-8");
+const csvData = fs.readFileSync("./csv_data/Diagrammer-Categories-csv.csv", "utf-8");
 const rows = csvData.split("\n");
 
 const data = [];

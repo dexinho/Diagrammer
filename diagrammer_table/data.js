@@ -1,4 +1,4 @@
-const pool = require('../mysql_pool.js')
+const pool = require('../tools/mysql_pool.js')
 
 async function diagrammer_table(){
     const [data] = await pool.execute('SELECT * FROM diagrammer')

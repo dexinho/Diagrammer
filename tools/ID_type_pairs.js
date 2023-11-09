@@ -1,4 +1,4 @@
-const diagrammerKeywords = require("./diagrammer/diagrammer_keywords.js");
+const diagrammerKeywords = require("../diagrammer_table/keywords.js");
 
 async function makeIDTypePairs() {
     const keywordsSet = await diagrammerKeywords();

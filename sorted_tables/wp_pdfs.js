@@ -1,6 +1,6 @@
-const pool = require("../mysql_pool.js");
-const csv_data = require("../csv_data.js");
-const diagrammerTable = require("../diagrammer/diagrammer_table.js");
+const pool = require("../tools/mysql_pool.js");
+const csv_data = require("../csv_data/oldType_newID.js");
+const diagrammerTable = require("../diagrammer_table/data.js");
 
 const pdfs = async () => {
     try {

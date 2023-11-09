@@ -1,6 +1,6 @@
-const pool = require("../mysql_pool.js");
-const csv_data = require("../csv_data.js");
-const diagrammerKeywords = require("../diagrammer/diagrammer_keywords.js");
+const pool = require("../tools/mysql_pool.js");
+const csv_data = require("../csv_data/oldType_newID.js");
+const diagrammerKeywords = require("../diagrammer_table/keywords.js");
 
 async function cats() {
     const keywordsSet = await diagrammerKeywords();
